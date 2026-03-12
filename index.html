@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent Treasury — One wallet. Every chain. Auto-stack what you believe in.</title>
+<meta name="description" content="Self-custodial multi-chain wallet for AI agents. Receive any token, auto-convert to your preferred asset. Human oversight built in.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#09090b;--card:#111114;--border:#1e1e24;--text:#f0f0f5;--muted:#71717a;--accent:#a78bfa;--accent2:#7c3aed;--green:#22c55e}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,system-ui,'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+
+.container{max-width:720px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{padding:20px 24px;max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.mark{font-size:15px;font-weight:700;letter-spacing:-0.02em}
+.mark span{color:var(--muted);font-weight:400}
+.nav-cta{font-size:13px;color:var(--accent);border:1px solid rgba(167,139,250,0.3);padding:6px 16px;border-radius:8px;transition:all 0.2s}
+.nav-cta:hover{background:rgba(167,139,250,0.1);border-color:var(--accent)}
+
+/* Hero */
+.hero{text-align:center;padding:80px 24px 60px;max-width:720px;margin:0 auto}
+.hero h1{font-size:clamp(32px,5vw,48px);font-weight:800;line-height:1.1;letter-spacing:-0.04em;margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--muted);font-size:18px;max-width:480px;margin:0 auto 32px;line-height:1.5}
+.hero-cta{display:inline-block;background:var(--accent2);color:white;padding:12px 32px;border-radius:10px;font-size:15px;font-weight:600;transition:all 0.2s}
+.hero-cta:hover{background:var(--accent);transform:translateY(-1px)}
+
+/* Problem */
+.problem{padding:60px 0;border-top:1px solid var(--border)}
+.problem h2{font-size:20px;font-weight:700;margin-bottom:24px;letter-spacing:-0.02em}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.problem-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.problem-card .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;font-weight:600}
+.problem-card .name{font-size:14px;font-weight:600;margin-bottom:4px}
+.problem-card .issue{font-size:13px;color:var(--muted)}
+
+/* How */
+.how{padding:60px 0;border-top:1px solid var(--border)}
+.how h2{font-size:20px;font-weight:700;margin-bottom:32px;letter-spacing:-0.02em}
+.step{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
+.step-num{width:32px;height:32px;border-radius:50%;background:rgba(167,139,250,0.12);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px}
+.step h3{font-size:15px;font-weight:600;margin-bottom:2px}
+.step p{font-size:13px;color:var(--muted)}
+
+/* Comparison */
+.compare{padding:60px 0;border-top:1px solid var(--border)}
+.compare h2{font-size:20px;font-weight:700;margin-bottom:24px;letter-spacing:-0.02em}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.06em}
+td{padding:10px 12px;border-bottom:1px solid var(--border)}
+td:last-child{color:var(--accent);font-weight:600}
+.yes{color:var(--green)}
+.no{color:var(--muted)}
+
+/* Values */
+.values{padding:60px 0;border-top:1px solid var(--border)}
+.values h2{font-size:20px;font-weight:700;margin-bottom:24px;letter-spacing:-0.02em}
+.value-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.value{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.value h3{font-size:14px;font-weight:600;margin-bottom:4px}
+.value p{font-size:13px;color:var(--muted)}
+
+/* CTA */
+.bottom-cta{text-align:center;padding:60px 24px;border-top:1px solid var(--border)}
+.bottom-cta h2{font-size:24px;font-weight:800;letter-spacing:-0.03em;margin-bottom:8px}
+.bottom-cta p{color:var(--muted);margin-bottom:24px;font-size:15px}
+.bottom-cta code{display:block;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;font-size:14px;color:var(--accent);max-width:400px;margin:0 auto 12px;font-family:'SF Mono',Monaco,monospace}
+.bottom-cta .note{font-size:12px;color:var(--muted)}
+
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;border-top:1px solid var(--border)}
+
+@media(max-width:640px){
+  .problem-grid,.value-grid{grid-template-columns:1fr}
+  .hero{padding:48px 24px 40px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="mark">Agent Treasury <span>v0.1</span></div>
+  <a href="https://github.com/timholtom/agent-treasury" class="nav-cta">GitHub</a>
+</nav>
+
+<section class="hero">
+  <h1>One wallet. Every chain.<br><em>Auto-stack what you believe in.</em></h1>
+  <p>Self-custodial multi-chain treasury for AI agents. Receive any token on any chain. Auto-convert to your preferred asset. Human oversight on every spend.</p>
+  <a href="#start" class="hero-cta">Get started</a>
+</section>
+
+<section class="problem">
+  <div class="container">
+    <h2>Every agent payment product picks a lane. None of them pick yours.</h2>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="label">Corporate cards</div>
+        <div class="name">Ramp Agent Cards</div>
+        <div class="issue">Fiat only. US corp only. Your agent can't hold crypto.</div>
+      </div>
+      <div class="problem-card">
+        <div class="label">Agent banking</div>
+        <div class="name">Natural</div>
+        <div class="issue">FDIC-insured but custodial. USD only. KYC required.</div>
+      </div>
+      <div class="problem-card">
+        <div class="label">API wallet</div>
+        <div class="name">AgentCash</div>
+        <div class="issue">USDC on Base only. Custodial. Spending only, no earning.</div>
+      </div>
+      <div class="problem-card">
+        <div class="label">Payment protocol</div>
+        <div class="name">x402</div>
+        <div class="issue">Great protocol, one chain. No treasury, no conversion.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="container">
+    <h2>How Agent Treasury works</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h3>Receive anything</h3>
+        <p>One address per chain. Accept USDC, ETH, SOL, BTC over Lightning — whatever the other agent or human sends.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h3>Auto-convert</h3>
+        <p>Set your preference: "stack BTC". Every incoming payment auto-swaps to your chosen asset. Change it anytime.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h3>Pay in their currency</h3>
+        <p>Agent needs to pay another agent in SOL? Treasury swaps the minimum needed from your stack and sends. You keep accumulating what you believe in.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <h3>Human oversight</h3>
+        <p>Under $5? Auto-approved. Over $5? You get a Telegram notification with approve/reject. Every transaction logged. Full audit trail.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="compare">
+  <div class="container">
+    <h2>Comparison</h2>
+    <table>
+      <thead>
+        <tr><th></th><th>Ramp</th><th>Natural</th><th>AgentCash</th><th>Agent Treasury</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Self-custodial</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td></tr>
+        <tr><td>Multi-chain</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">5+ chains</td></tr>
+        <tr><td>Auto-stack</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">Any asset</td></tr>
+        <tr><td>No KYC</td><td class="no">US corp</td><td class="no">Required</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td>Agent-to-agent</td><td class="no">No</td><td>Fiat</td><td>APIs</td><td class="yes">Any chain</td></tr>
+        <tr><td>Human oversight</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td><td class="yes">Yes</td></tr>
+        <tr><td>Earn + spend</td><td>Spend</td><td>Both (fiat)</td><td>Spend</td><td class="yes">Both (crypto)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="values">
+  <div class="container">
+    <h2>Principles</h2>
+    <div class="value-grid">
+      <div class="value">
+        <h3>Your keys</h3>
+        <p>Agent holds its own keys. Unilateral exit. No platform risk.</p>
+      </div>
+      <div class="value">
+        <h3>Human in the loop</h3>
+        <p>Configurable spend limits. Approval flows. Full audit trail. Your agent, your rules.</p>
+      </div>
+      <div class="value">
+        <h3>Asset-opinion native</h3>
+        <p>Your agent doesn't just transact — it has a thesis. Stack BTC. Stack ETH. Stack whatever you believe in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bottom-cta" id="start">
+  <div class="container">
+    <h2>Try it now</h2>
+    <p>Node.js. Three wallets. Zero accounts to create.</p>
+    <code>npx agent-treasury init</code>
+    <div class="note">EVM + Solana + Bitcoin (Lightning via Spark). Self-custodial from the first command.</div>
+  </div>
+</section>
+
+<footer>
+  Agent Treasury is open source. Not financial advice. Your keys, your responsibility.
+</footer>
+
+</body>
+</html>

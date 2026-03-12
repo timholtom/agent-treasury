@@ -1,0 +1,42 @@
+{
+  "policy": {
+    "stackAsset": "BTC",
+    "autoApproveBelow": 5.00,
+    "askHumanAbove": 5.00,
+    "maxSingleTransaction": 500.00,
+    "dailySpendLimit": 100.00
+  },
+  "chains": {
+    "evm": {
+      "enabled": true,
+      "networks": {
+        "base": { "chainId": 8453, "rpc": "https://mainnet.base.org" },
+        "ethereum": { "chainId": 1, "rpc": "https://ethereum-rpc.publicnode.com" },
+        "arbitrum": { "chainId": 42161, "rpc": "https://arbitrum-one-rpc.publicnode.com" },
+        "optimism": { "chainId": 10, "rpc": "https://optimism-rpc.publicnode.com" },
+        "polygon": { "chainId": 137, "rpc": "https://polygon-bor-rpc.publicnode.com" }
+      },
+      "tokens": {
+        "USDC": {
+          "base": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "ethereum": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "arbitrum": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "optimism": "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
+          "polygon": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+        },
+        "USDT": {
+          "base": "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2",
+          "ethereum": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+        }
+      }
+    },
+    "solana": {
+      "enabled": true,
+      "rpc": "https://api.mainnet-beta.solana.com"
+    },
+    "bitcoin": {
+      "enabled": false,
+      "note": "Spark SDK integration pending"
+    }
+  }
+}
