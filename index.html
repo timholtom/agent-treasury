@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Agent Treasury — The agent wallet that stacks what you believe in.</title>
 <meta name="description" content="Self-custodial multi-chain wallet for AI agents. Receive any token, auto-convert to your preferred asset. Human oversight built in.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9878;</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#09090b;--card:#111114;--card2:#16161b;--border:#1e1e2a;--border2:#2a2a38;--text:#f0f0f5;--muted:#71717a;--accent:#a78bfa;--accent2:#7c3aed;--green:#22c55e;--blue:#3b82f6;--amber:#f59e0b;--red:#ef4444}
 body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-.container{max-width:800px;margin:0 auto;padding:0 24px}
+.container{max-width:860px;margin:0 auto;padding:0 24px}
 
 /* Nav */
-nav{padding:16px 24px;max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+nav{padding:16px 24px;max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
 .mark{font-size:15px;font-weight:800;letter-spacing:-0.03em;display:flex;align-items:center;gap:8px}
 .mark-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px rgba(34,197,94,0.5)}
 .mark span{color:var(--muted);font-weight:400;font-size:12px}
@@ -25,13 +26,13 @@ nav{padding:16px 24px;max-width:800px;margin:0 auto;display:flex;justify-content
 .nav-cta:hover{background:rgba(167,139,250,0.08);border-color:var(--accent);text-decoration:none}
 
 /* Hero */
-.hero{text-align:center;padding:72px 24px 40px;max-width:800px;margin:0 auto}
+.hero{text-align:center;padding:72px 24px 40px;max-width:860px;margin:0 auto}
 .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.12);color:var(--accent);font-size:12px;font-weight:600;padding:5px 14px;border-radius:100px;margin-bottom:20px}
 .hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
 .hero h1{font-size:clamp(36px,6vw,56px);font-weight:900;line-height:1.05;letter-spacing:-0.045em;margin-bottom:16px}
 .hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{color:var(--muted);font-size:17px;max-width:520px;margin:0 auto 32px;line-height:1.55}
+.hero p{color:var(--muted);font-size:17px;max-width:560px;margin:0 auto 32px;line-height:1.55}
 .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn{display:inline-block;padding:11px 28px;border-radius:10px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;transition:all 0.2s;border:none;text-decoration:none}
 .btn:hover{text-decoration:none}
@@ -41,7 +42,7 @@ nav{padding:16px 24px;max-width:800px;margin:0 auto;display:flex;justify-content
 .btn-outline:hover{border-color:var(--accent);background:rgba(167,139,250,0.05)}
 
 /* Live stats */
-.live-stats{display:flex;justify-content:center;gap:48px;padding:24px 0 48px;max-width:500px;margin:0 auto}
+.live-stats{display:flex;justify-content:center;gap:48px;padding:24px 0 48px;max-width:600px;margin:0 auto}
 .live-stat{text-align:center}
 .live-stat .num{font-size:28px;font-weight:900;letter-spacing:-0.03em}
 .live-stat .num.green{color:var(--green)}
@@ -50,7 +51,7 @@ nav{padding:16px 24px;max-width:800px;margin:0 auto;display:flex;justify-content
 .live-stat .label{font-size:11px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:0.06em;margin-top:2px}
 
 /* Terminal */
-.terminal{background:#0c0c10;border:1px solid var(--border);border-radius:14px;overflow:hidden;max-width:600px;margin:0 auto 0}
+.terminal{background:#0c0c10;border:1px solid var(--border);border-radius:14px;overflow:hidden;max-width:640px;margin:0 auto}
 .terminal-bar{display:flex;align-items:center;gap:6px;padding:12px 16px;border-bottom:1px solid var(--border);background:#0f0f14}
 .terminal-dot{width:10px;height:10px;border-radius:50%}
 .terminal-dot.r{background:#ff5f57}.terminal-dot.y{background:#febc2e}.terminal-dot.g{background:#28c840}
@@ -61,12 +62,16 @@ nav{padding:16px 24px;max-width:800px;margin:0 auto;display:flex;justify-content
 .terminal-body .dim{color:#3a3a4a}
 .terminal-body .white{color:var(--text)}
 .terminal-body .amber{color:var(--amber)}
+.terminal-body .red{color:var(--red)}
+.terminal-body .blue{color:var(--blue)}
 
-/* Problem */
-.section{padding:56px 0;border-top:1px solid var(--border)}
-.section h2{font-size:22px;font-weight:800;letter-spacing:-0.03em;margin-bottom:8px}
-.section .subtitle{color:var(--muted);font-size:14px;margin-bottom:28px}
-.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+/* Sections */
+.section{padding:64px 0;border-top:1px solid var(--border)}
+.section h2{font-size:24px;font-weight:800;letter-spacing:-0.03em;margin-bottom:8px}
+.section .subtitle{color:var(--muted);font-size:14px;margin-bottom:32px;line-height:1.6}
+
+/* Problem grid */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 .problem-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;transition:border-color 0.2s}
 .problem-card:hover{border-color:var(--border2)}
 .problem-card .label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;font-weight:600}
@@ -81,13 +86,26 @@ nav{padding:16px 24px;max-width:800px;margin:0 auto;display:flex;justify-content
 .flow-step p{font-size:11px;color:var(--muted);line-height:1.4}
 .flow-arrow{color:var(--border2);font-size:18px;text-align:center;padding:0 4px}
 
+/* Architecture */
+.arch-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.arch-block{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.arch-block h3{font-size:14px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.arch-block h3 .tag{font-size:10px;font-weight:600;color:var(--accent);background:rgba(167,139,250,0.1);padding:2px 8px;border-radius:4px}
+.arch-block p{font-size:12px;color:var(--muted);line-height:1.5}
+.arch-block ul{list-style:none;margin-top:8px}
+.arch-block ul li{font-size:12px;color:var(--muted);padding:3px 0;display:flex;align-items:center;gap:6px}
+.arch-block ul li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0}
+
 /* Compare */
-table{width:100%;border-collapse:collapse;font-size:12px}
+.compare-wrap{overflow-x:auto;margin:0 -8px;padding:0 8px}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:700px}
 th{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:0.06em}
+th:last-child{color:var(--accent)}
 td{padding:10px 10px;border-bottom:1px solid rgba(30,30,42,0.5)}
 td:last-child{color:var(--accent);font-weight:700}
 .yes{color:var(--green);font-weight:600}
 .no{color:#3a3a4a}
+.partial{color:var(--amber);font-weight:500}
 tr:hover td{background:rgba(167,139,250,0.02)}
 
 /* Values */
@@ -102,17 +120,61 @@ tr:hover td{background:rgba(167,139,250,0.02)}
 .chain-pill{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--muted);transition:all 0.2s}
 .chain-pill:hover{border-color:var(--accent);color:var(--text)}
 
+/* Use cases */
+.usecase-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.usecase{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color 0.2s}
+.usecase:hover{border-color:var(--border2)}
+.usecase h3{font-size:14px;font-weight:700;margin-bottom:4px}
+.usecase .scenario{font-size:12px;color:var(--accent);font-weight:600;margin-bottom:6px}
+.usecase p{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* Roadmap */
+.roadmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.roadmap-phase{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;position:relative}
+.roadmap-phase.active{border-color:var(--accent)}
+.roadmap-phase .phase-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.roadmap-phase .phase-label .dot{width:6px;height:6px;border-radius:50%}
+.roadmap-phase.active .phase-label{color:var(--accent)}
+.roadmap-phase.active .phase-label .dot{background:var(--green);box-shadow:0 0 6px rgba(34,197,94,0.5)}
+.roadmap-phase:not(.active) .phase-label{color:var(--muted)}
+.roadmap-phase:not(.active) .phase-label .dot{background:var(--border2)}
+.roadmap-phase h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.roadmap-phase ul{list-style:none;margin:0}
+.roadmap-phase ul li{font-size:12px;color:var(--muted);padding:2px 0;display:flex;align-items:flex-start;gap:6px}
+.roadmap-phase ul li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--border2);flex-shrink:0;margin-top:6px}
+.roadmap-phase.active ul li.done::before{background:var(--green)}
+.roadmap-phase.active ul li.done{color:var(--text)}
+
+/* Policy demo */
+.policy-demo{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;max-width:640px;margin:0 auto}
+.policy-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.policy-header h3{font-size:14px;font-weight:700}
+.policy-header .badge{font-size:10px;font-weight:600;padding:3px 10px;border-radius:100px}
+.badge-green{background:rgba(34,197,94,0.1);color:var(--green);border:1px solid rgba(34,197,94,0.2)}
+.badge-amber{background:rgba(245,158,11,0.1);color:var(--amber);border:1px solid rgba(245,158,11,0.2)}
+.badge-red{background:rgba(239,68,68,0.1);color:var(--red);border:1px solid rgba(239,68,68,0.2)}
+.policy-rows{padding:0}
+.policy-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:12px 20px;border-bottom:1px solid rgba(30,30,42,0.5);font-size:13px}
+.policy-row:last-child{border-bottom:none}
+.policy-row .action{font-weight:600}
+.policy-row .amount{color:var(--muted);font-family:'SF Mono',Monaco,monospace;font-size:12px}
+.policy-row .result{font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.result-auto{color:var(--green);background:rgba(34,197,94,0.08)}
+.result-ask{color:var(--amber);background:rgba(245,158,11,0.08)}
+.result-deny{color:var(--red);background:rgba(239,68,68,0.08)}
+
 /* CTA */
-.bottom-cta{text-align:center;padding:56px 24px}
+.bottom-cta{text-align:center;padding:64px 24px}
 .bottom-cta h2{font-size:28px;font-weight:900;letter-spacing:-0.03em;margin-bottom:8px}
 .bottom-cta p{color:var(--muted);margin-bottom:24px;font-size:15px}
 
 footer{text-align:center;padding:24px;color:#2a2a38;font-size:11px;border-top:1px solid var(--border)}
 
 @media(max-width:640px){
-  .problem-grid,.value-grid{grid-template-columns:1fr}
+  .problem-grid,.value-grid,.roadmap{grid-template-columns:1fr}
+  .arch-grid,.usecase-grid{grid-template-columns:1fr}
   .hero{padding:48px 20px 32px}
-  .live-stats{gap:24px}
+  .live-stats{gap:24px;flex-wrap:wrap}
   .flow{grid-template-columns:1fr;gap:8px}
   .flow-arrow{transform:rotate(90deg);padding:4px 0}
   .nav-links a:not(.nav-cta){display:none}
@@ -126,6 +188,7 @@ footer{text-align:center;padding:24px;color:#2a2a38;font-size:11px;border-top:1p
   <div class="nav-links">
     <a href="#how">How it works</a>
     <a href="#compare">Compare</a>
+    <a href="#roadmap">Roadmap</a>
     <a href="https://github.com/timholtom/agent-treasury" class="nav-cta">GitHub</a>
   </div>
 </nav>
@@ -141,9 +204,10 @@ footer{text-align:center;padding:24px;color:#2a2a38;font-size:11px;border-top:1p
 </section>
 
 <div class="live-stats">
-  <div class="live-stat"><div class="num green">5+</div><div class="label">Chains</div></div>
+  <div class="live-stat"><div class="num green">7</div><div class="label">Chains</div></div>
   <div class="live-stat"><div class="num accent">$0</div><div class="label">Platform fees</div></div>
   <div class="live-stat"><div class="num amber">0</div><div class="label">KYC required</div></div>
+  <div class="live-stat"><div class="num green">100%</div><div class="label">Open source</div></div>
 </div>
 
 <div class="container">
@@ -157,13 +221,18 @@ footer{text-align:center;padding:24px;color:#2a2a38;font-size:11px;border-top:1p
       <span class="dim">Initializing Agent Treasury...</span><br><br>
       <span class="green">EVM</span> &nbsp;0xda85...261E <span class="dim">(Base, ETH, Arb, OP, Polygon)</span><br>
       <span class="green">SOL</span> &nbsp;7bbC4...azs<br>
-      <span class="green">BTC</span> &nbsp;Spark Lightning <span class="dim">(pending)</span><br><br>
-      <span class="dim">Policy:</span> <span class="amber">Stack BTC</span> <span class="dim">| Auto-approve &lt; $5 | Ask human &gt; $5</span><br><br>
+      <span class="green">BTC</span> &nbsp;Spark Lightning<br><br>
+      <span class="dim">Policy loaded:</span> <span class="amber">Stack BTC</span><br>
+      <span class="dim">&nbsp;&nbsp;Auto-approve:</span> <span class="white">&lt; $5</span><br>
+      <span class="dim">&nbsp;&nbsp;Ask human:</span> <span class="white">$5 - $500</span><br>
+      <span class="dim">&nbsp;&nbsp;Deny:</span> <span class="white">&gt; $500</span><br>
+      <span class="dim">&nbsp;&nbsp;Daily limit:</span> <span class="white">$100</span><br><br>
       <span class="green">Treasury ready.</span> <span class="dim">3 wallets. 0 accounts created. Your keys.</span>
     </div>
   </div>
 </div>
 
+<!-- How it works -->
 <section class="section" id="how">
   <div class="container">
     <h2>How it works</h2>
@@ -179,74 +248,226 @@ footer{text-align:center;padding:24px;color:#2a2a38;font-size:11px;border-top:1p
       <div class="flow-step">
         <div class="icon">&#8644;</div>
         <h4>Convert</h4>
-        <p>Auto-swap to your asset</p>
+        <p>Auto-swap via Li.Fi / Jupiter</p>
       </div>
       <div class="flow-arrow">&#8594;</div>
       <div class="flow-step">
         <div class="icon">&#9878;</div>
         <h4>Approve</h4>
-        <p>Human oversight on spends</p>
+        <p>Human oversight via Telegram</p>
       </div>
       <div class="flow-arrow">&#8594;</div>
       <div class="flow-step">
         <div class="icon">&#9733;</div>
         <h4>Stack</h4>
-        <p>Accumulate what you believe in</p>
+        <p>Accumulate your conviction asset</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Policy engine demo -->
+<section class="section">
+  <div class="container">
+    <h2>Policy engine</h2>
+    <p class="subtitle">Configurable rules. Your agent earns freely. It spends carefully.</p>
+    
+    <div class="policy-demo">
+      <div class="policy-header">
+        <h3>Incoming transactions</h3>
+        <span class="badge badge-green">Policy active</span>
+      </div>
+      <div class="policy-rows">
+        <div class="policy-row">
+          <div class="action">Receive 50 USDC on Base</div>
+          <div class="amount">$50.00</div>
+          <div class="result result-auto">Auto-convert to BTC</div>
+        </div>
+        <div class="policy-row">
+          <div class="action">Receive 0.3 ETH for freelance work</div>
+          <div class="amount">$540.00</div>
+          <div class="result result-auto">Auto-convert to BTC</div>
+        </div>
+        <div class="policy-row">
+          <div class="action">Receive 10,000 DOGE tip</div>
+          <div class="amount">$820.00</div>
+          <div class="result result-auto">Auto-convert to BTC</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="policy-demo" style="margin-top:12px">
+      <div class="policy-header">
+        <h3>Outgoing transactions</h3>
+        <span class="badge badge-amber">Spend policy</span>
+      </div>
+      <div class="policy-rows">
+        <div class="policy-row">
+          <div class="action">Pay API costs</div>
+          <div class="amount">$2.40</div>
+          <div class="result result-auto">Auto-approved</div>
+        </div>
+        <div class="policy-row">
+          <div class="action">Buy compute credits</div>
+          <div class="amount">$25.00</div>
+          <div class="result result-ask">Asks human</div>
+        </div>
+        <div class="policy-row">
+          <div class="action">Large withdrawal</div>
+          <div class="amount">$800.00</div>
+          <div class="result result-deny">Denied</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Architecture -->
+<section class="section">
+  <div class="container">
+    <h2>Architecture</h2>
+    <p class="subtitle">Three wallet types. One unified treasury. All self-custodial.</p>
+    
+    <div class="arch-grid">
+      <div class="arch-block">
+        <h3>Wallet Manager <span class="tag">Core</span></h3>
+        <p>Generates and manages keys across chains. One identity, addresses everywhere.</p>
+        <ul>
+          <li>EVM wallet (Base, ETH, Arb, OP, Polygon)</li>
+          <li>Solana wallet (SPL tokens, Jupiter swaps)</li>
+          <li>Bitcoin wallet (Lightning via Spark SDK)</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <h3>Policy Engine <span class="tag">Rules</span></h3>
+        <p>Configurable spend tiers with full audit logging.</p>
+        <ul>
+          <li>Auto-approve below threshold</li>
+          <li>Ask human via Telegram above threshold</li>
+          <li>Hard deny above max single transaction</li>
+          <li>Daily aggregate limits</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <h3>Swap Router <span class="tag">Convert</span></h3>
+        <p>Cross-chain conversion to your conviction asset.</p>
+        <ul>
+          <li>Li.Fi SDK for EVM cross-chain swaps</li>
+          <li>Jupiter for Solana token swaps</li>
+          <li>Best route selection across DEXs</li>
+          <li>Configurable slippage and gas limits</li>
+        </ul>
+      </div>
+      <div class="arch-block">
+        <h3>Treasury CLI <span class="tag">Interface</span></h3>
+        <p>Single command to check, send, configure, and audit.</p>
+        <ul>
+          <li><code style="color:var(--accent);font-size:11px">treasury status</code> — all balances, all chains</li>
+          <li><code style="color:var(--accent);font-size:11px">treasury send</code> — policy-checked transfers</li>
+          <li><code style="color:var(--accent);font-size:11px">treasury config</code> — thresholds + stack asset</li>
+          <li><code style="color:var(--accent);font-size:11px">treasury audit</code> — full transaction history</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The problem -->
 <section class="section">
   <div class="container">
     <h2>The problem</h2>
-    <p class="subtitle">Every agent payment product picks a lane. None of them pick yours.</p>
+    <p class="subtitle">Every agent wallet product makes trade-offs. Most pick convenience over sovereignty.</p>
     <div class="problem-grid">
       <div class="problem-card">
         <div class="label">Corporate cards</div>
-        <div class="name">Ramp Agent Cards</div>
-        <div class="issue">Fiat only. US corp only. Your agent can't hold crypto.</div>
+        <div class="name">Ramp</div>
+        <div class="issue">Fiat only. US corp required. Your agent can't hold or earn crypto.</div>
       </div>
       <div class="problem-card">
         <div class="label">Agent banking</div>
         <div class="name">Natural</div>
-        <div class="issue">FDIC-insured but custodial. USD only. KYC required.</div>
+        <div class="issue">FDIC-insured but custodial. USD only. Full KYC required.</div>
       </div>
       <div class="problem-card">
         <div class="label">API wallet</div>
         <div class="name">AgentCash</div>
-        <div class="issue">USDC on Base only. Custodial. Spending only, no earning.</div>
+        <div class="issue">USDC on Base only. Custodial. Spending only, no earning flow.</div>
       </div>
       <div class="problem-card">
         <div class="label">Payment protocol</div>
         <div class="name">x402</div>
-        <div class="issue">Great protocol, single chain. No treasury, no conversion.</div>
+        <div class="issue">Elegant protocol, single chain. No treasury management, no conversion.</div>
+      </div>
+      <div class="problem-card">
+        <div class="label">Agentic wallet</div>
+        <div class="name">Coinbase CDP</div>
+        <div class="issue">Easy setup, but MPC custodial. Coinbase co-signs your keys. Their rules.</div>
+      </div>
+      <div class="problem-card">
+        <div class="label">Agent trader</div>
+        <div class="name">EmblemAI</div>
+        <div class="issue">250+ trading tools. Great for degen plays. No treasury thesis, no oversight.</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Comparison table -->
 <section class="section" id="compare">
   <div class="container">
     <h2>Comparison</h2>
-    <p class="subtitle">Side by side with the alternatives.</p>
+    <p class="subtitle">Side by side with every alternative.</p>
+    <div class="compare-wrap">
     <table>
       <thead>
-        <tr><th></th><th>Ramp</th><th>Natural</th><th>AgentCash</th><th>Agent Treasury</th></tr>
+        <tr><th>Feature</th><th>Ramp</th><th>Natural</th><th>AgentCash</th><th>CDP</th><th>EmblemAI</th><th>Skyfire</th><th>Agent Treasury</th></tr>
       </thead>
       <tbody>
-        <tr><td>Self-custodial</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td></tr>
-        <tr><td>Multi-chain</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">5+ chains</td></tr>
-        <tr><td>Auto-stack asset</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">Any asset</td></tr>
-        <tr><td>No KYC needed</td><td class="no">US corp</td><td class="no">Required</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
-        <tr><td>Agent-to-agent</td><td class="no">No</td><td>Fiat only</td><td>APIs only</td><td class="yes">Any chain</td></tr>
-        <tr><td>Human oversight</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td><td class="yes">Yes</td></tr>
-        <tr><td>Earn + spend</td><td>Spend</td><td>Both (fiat)</td><td>Spend</td><td class="yes">Both</td></tr>
+        <tr><td>Self-custodial</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="no">MPC</td><td class="partial">Password</td><td class="no">No</td><td class="yes">Yes</td></tr>
+        <tr><td>Multi-chain</td><td class="no">Fiat</td><td class="no">USD</td><td class="no">Base</td><td class="yes">Yes</td><td class="yes">7 chains</td><td class="partial">Limited</td><td class="yes">7 chains</td></tr>
+        <tr><td>Auto-stack asset</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">Any asset</td></tr>
+        <tr><td>No KYC</td><td class="no">US corp</td><td class="no">Required</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">Required</td><td class="yes">Yes</td></tr>
+        <tr><td>Human oversight</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td><td class="partial">Dashboard</td><td class="no">No</td><td class="partial">Limits</td><td class="yes">Telegram</td></tr>
+        <tr><td>Earn + spend</td><td class="no">Spend</td><td class="partial">Both (fiat)</td><td class="no">Spend</td><td class="yes">Both</td><td class="yes">Both</td><td class="no">Spend</td><td class="yes">Both</td></tr>
+        <tr><td>Open source</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="partial">SDK only</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td></tr>
+        <tr><td>Platform fee</td><td>Per card</td><td>Per tx</td><td>Per tx</td><td>Free tier</td><td>Credits</td><td>Per tx</td><td class="yes">$0</td></tr>
       </tbody>
     </table>
+    </div>
   </div>
 </section>
 
+<!-- Use cases -->
+<section class="section">
+  <div class="container">
+    <h2>Use cases</h2>
+    <p class="subtitle">How agents use Treasury in production.</p>
+    <div class="usecase-grid">
+      <div class="usecase">
+        <div class="scenario">Freelance agent</div>
+        <h3>Earn on Moltlaunch, stack BTC</h3>
+        <p>Agent completes tasks on Moltlaunch marketplace, earns ETH on Base. Treasury auto-converts earnings to BTC via Li.Fi. Human approves withdrawals over $5 via Telegram.</p>
+      </div>
+      <div class="usecase">
+        <div class="scenario">Research agent</div>
+        <h3>Accept tips, pay for APIs</h3>
+        <p>Agent receives crypto tips for research reports. Treasury auto-stacks to conviction asset. Small API payments (OpenAI, Brave) auto-approved under $5. Large purchases flagged.</p>
+      </div>
+      <div class="usecase">
+        <div class="scenario">Multi-agent system</div>
+        <h3>Agent-to-agent payments</h3>
+        <p>Coordinator agent pays specialist agents for sub-tasks. Each agent has its own Treasury with policy limits. Audit trail tracks every payment across the swarm.</p>
+      </div>
+      <div class="usecase">
+        <div class="scenario">DAO contributor</div>
+        <h3>Receive grants, convert to ETH</h3>
+        <p>Agent receives DAO tokens as payment. Treasury auto-converts to ETH (or any preferred asset). No manual token management. Configurable conversion triggers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Principles -->
 <section class="section">
   <div class="container">
     <h2>Principles</h2>
@@ -255,26 +476,27 @@ footer{text-align:center;padding:24px;color:#2a2a38;font-size:11px;border-top:1p
       <div class="value">
         <div class="icon">&#128273;</div>
         <h3>Your keys</h3>
-        <p>Agent holds its own private keys. Unilateral exit to any chain. No platform risk, no custodian.</p>
+        <p>Agent holds its own private keys. No MPC, no custodian, no platform dependency. Unilateral exit to any chain, any time.</p>
       </div>
       <div class="value">
         <div class="icon">&#128101;</div>
         <h3>Human in the loop</h3>
-        <p>Configurable spend limits and approval flows. Full audit trail. Your agent, your rules.</p>
+        <p>Configurable spend limits and approval flows via Telegram. Full audit trail. Your agent operates within boundaries you set.</p>
       </div>
       <div class="value">
         <div class="icon">&#9889;</div>
         <h3>Asset conviction</h3>
-        <p>Your agent doesn't just transact. It has a thesis. Stack BTC, stack ETH, stack whatever you believe in.</p>
+        <p>Your agent doesn't just transact. It has a thesis. Earn anything, stack what you believe in. BTC, ETH, stables — your call.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Supported chains -->
 <section class="section">
   <div class="container" style="text-align:center">
     <h2>Supported chains</h2>
-    <p class="subtitle">One wallet, addresses on every chain.</p>
+    <p class="subtitle">One wallet identity. Addresses on every chain.</p>
     <div class="chains">
       <div class="chain-pill">Base</div>
       <div class="chain-pill">Ethereum</div>
@@ -287,20 +509,72 @@ footer{text-align:center;padding:24px;color:#2a2a38;font-size:11px;border-top:1p
   </div>
 </section>
 
+<!-- Roadmap -->
+<section class="section" id="roadmap">
+  <div class="container">
+    <h2>Roadmap</h2>
+    <p class="subtitle">Where we are and where we're going.</p>
+    <div class="roadmap">
+      <div class="roadmap-phase active">
+        <div class="phase-label"><span class="dot"></span>Phase 1 — Foundation</div>
+        <h3>Wallet + Policy</h3>
+        <ul>
+          <li class="done">EVM wallet (5 chains)</li>
+          <li class="done">Solana wallet</li>
+          <li class="done">Balance scanning</li>
+          <li class="done">Policy engine (auto/ask/deny)</li>
+          <li class="done">Audit logging</li>
+          <li class="done">CLI interface</li>
+        </ul>
+      </div>
+      <div class="roadmap-phase">
+        <div class="phase-label"><span class="dot"></span>Phase 2 — Convert</div>
+        <h3>Swap + Stack</h3>
+        <ul>
+          <li>Li.Fi cross-chain swaps</li>
+          <li>Jupiter Solana swaps</li>
+          <li>Auto-convert on receive</li>
+          <li>Telegram approval flow</li>
+          <li>Spark Bitcoin/Lightning</li>
+          <li>Configurable stack asset</li>
+        </ul>
+      </div>
+      <div class="roadmap-phase">
+        <div class="phase-label"><span class="dot"></span>Phase 3 — Earn</div>
+        <h3>Integrations</h3>
+        <ul>
+          <li>Moltlaunch earnings pipeline</li>
+          <li>x402 payment receiving</li>
+          <li>Agent-to-agent invoicing</li>
+          <li>Webhook notifications</li>
+          <li>Multi-agent treasury mode</li>
+          <li>Dashboard UI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
 <section class="bottom-cta" id="start">
   <div class="container">
     <h2>Start stacking</h2>
     <p>Node.js. Three wallets. Zero accounts to create.</p>
-    <div class="terminal" style="max-width:440px;margin:0 auto 16px">
+    <div class="terminal" style="max-width:480px;margin:0 auto 16px">
       <div class="terminal-bar">
         <div class="terminal-dot r"></div><div class="terminal-dot y"></div><div class="terminal-dot g"></div>
         <div class="terminal-title">terminal</div>
       </div>
       <div class="terminal-body" style="padding:12px 16px">
-        <span class="prompt">$</span> <span class="white">npx agent-treasury init</span>
+        <span class="prompt">$</span> <span class="white">npx agent-treasury init</span><br>
+        <span class="dim"># EVM + Solana + Bitcoin Lightning</span><br>
+        <span class="dim"># Self-custodial from the first command</span>
       </div>
     </div>
-    <p style="font-size:12px;color:var(--muted)">EVM + Solana + Bitcoin Lightning. Self-custodial from the first command.</p>
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:20px">
+      <a href="https://github.com/timholtom/agent-treasury" class="btn btn-primary">View on GitHub</a>
+      <a href="https://github.com/timholtom/agent-treasury#readme" class="btn btn-outline">Read the docs</a>
+    </div>
   </div>
 </section>
 
